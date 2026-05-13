@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VeloX Motors – Drive the Future</title>
+  <meta name="description" content="VeloX Motors offers luxury, performance, and electric vehicles for the modern driver. Explore our car models and book a test drive today." />
+  <meta name="keywords" content="car company, luxury cars, electric vehicles, sports cars, VeloX Motors, new cars, car dealership, performance cars, SUV, sedan, test drive, buy car, premium automobiles, auto dealership" />
+  <meta name="author" content="VeloX Motors" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #ffffff;
+      color: #1a1a1a;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 6%;
+      background: #ffffff;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      letter-spacing: 1px;
+    }
+    .logo span { color: #c0392b; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a {
+      text-decoration: none;
+      color: #555;
+      font-size: 0.92rem;
+      font-weight: 500;
+    }
+    .nav-links a:hover { color: #c0392b; }
+    .nav-btn {
+      background: #c0392b;
+      color: #fff;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .nav-btn:hover { background: #a93226; }
+
+    /* HERO */
+    #hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 80px 6%;
+      background: #f8f8f8;
+      border-bottom: 1px solid #e0e0e0;
+      gap: 40px;
+    }
+    .hero-text { max-width: 520px; }
+    .hero-text h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 18px;
+      color: #1a1a1a;
+    }
+    .hero-text h1 span { color: #c0392b; }
+    .hero-text p {
+      color: #555;
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+    .hero-btns { display: flex; gap: 12px; }
+    .btn-red {
+      background: #c0392b;
+      color: #fff;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .btn-red:hover { background: #a93226; }
+    .btn-border {
+      background: transparent;
+      color: #1a1a1a;
+      padding: 12px 28px;
+      border: 1.5px solid #ccc;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    .btn-border:hover { border-color: #999; }
+    .hero-img {
+      font-size: 7rem;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    /* STATS */
+    #stats {
+      display: flex;
+      justify-content: center;
+      background: #c0392b;
+    }
+    .stat {
+      flex: 1;
+      max-width: 250px;
+      text-align: center;
+      padding: 36px 20px;
+      border-right: 1px solid rgba(255,255,255,0.2);
+    }
+    .stat:last-child { border-right: none; }
+    .stat h3 { font-size: 2rem; font-weight: 700; color: #fff; }
+    .stat p { font-size: 0.85rem; color: rgba(255,255,255,0.8); margin-top: 4px; }
+
+    /* SECTION */
+    .section { padding: 80px 6%; }
+    .sec-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #c0392b;
+      margin-bottom: 8px;
+    }
+    .sec-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #1a1a1a;
+    }
+    .sec-sub {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      max-width: 520px;
+      margin-bottom: 48px;
+    }
+
+    /* MODELS */
+    #models { background: #fff; }
+    .models-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .car-card {
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 28px;
+      background: #fff;
+    }
+    .car-card:hover { border-color: #c0392b; }
+    .car-icon { font-size: 2.8rem; display: block; margin-bottom: 16px; }
+    .car-badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 3px;
+      margin-bottom: 10px;
+    }
+    .badge-sport { background: #fdecea; color: #c0392b; }
+    .badge-ev    { background: #e8f5e9; color: #2e7d32; }
+    .badge-suv   { background: #e3f2fd; color: #1565c0; }
+    .badge-sedan { background: #f3e5f5; color: #6a1b9a; }
+    .car-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; }
+    .car-card p  { color: #666; font-size: 0.88rem; line-height: 1.6; margin-bottom: 16px; }
+    .car-specs { display: flex; gap: 20px; border-top: 1px solid #f0f0f0; padding-top: 14px; }
+    .spec strong { display: block; font-size: 0.95rem; font-weight: 700; color: #1a1a1a; }
+    .spec span   { font-size: 0.75rem; color: #888; }
+    .car-price   { font-size: 1.25rem; font-weight: 700; color: #c0392b; margin-top: 16px; }
+
+    /* FEATURES */
+    #features { background: #f8f8f8; }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .feat-card {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 24px;
+    }
+    .feat-icon { font-size: 1.8rem; margin-bottom: 12px; }
+    .feat-card h4 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
+    .feat-card p  { color: #666; font-size: 0.85rem; line-height: 1.6; }
+
+    /* TEST DRIVE */
+    #testdrive { background: #fff; border-top: 1px solid #e0e0e0; }
+    .td-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .contact-info p {
+      color: #555;
+      font-size: 0.9rem;
+      line-height: 2;
+      margin-top: 16px;
+    }
+    .td-form { display: flex; flex-direction: column; gap: 12px; }
+    .td-form input,
+    .td-form select {
+      border: 1px solid #ddd;
+      background: #fff;
+      color: #1a1a1a;
+      padding: 12px 16px;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 0.92rem;
+      outline: none;
+    }
+    .td-form input:focus,
+    .td-form select:focus { border-color: #c0392b; }
+    .td-form input::placeholder { color: #aaa; }
+
+    /* FOOTER */
+    footer {
+      background: #1a1a1a;
+      color: #ccc;
+      padding: 40px 6%;
+      text-align: center;
+    }
+    .footer-logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+    }
+    .footer-logo span { color: #c0392b; }
+    .footer-links { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 16px; }
+    .footer-links a { color: #aaa; text-decoration: none; font-size: 0.85rem; }
+    .footer-links a:hover { color: #fff; }
+    footer p { font-size: 0.82rem; color: #777; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      #hero { flex-direction: column; text-align: center; }
+      .hero-btns { justify-content: center; }
+      #stats { flex-wrap: wrap; }
+      .stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.2); }
+      .td-wrap { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="logo">VELO<span>X</span> MOTORS</div>
+  <ul class="nav-links">
+    <li><a href="#models">Models</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#testdrive">Test Drive</a></li>
+    <li><a href="#footer">Contact</a></li>
+  </ul>
+  <button class="nav-btn" onclick="document.getElementById('testdrive').scrollIntoView()">Book a Test Drive</button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-text">
+    <h1>Drive with <span>Confidence</span> and Style</h1>
+    <p>VeloX Motors delivers premium vehicles built for performance, safety, and comfort. Find your perfect car today.</p>
+    <div class="hero-btns">
+      <button class="btn-red" onclick="document.getElementById('models').scrollIntoView()">View Models</button>
+      <button class="btn-border" onclick="document.getElementById('testdrive').scrollIntoView()">Book Test Drive</button>
+    </div>
+  </div>
+  <div class="hero-img">🚗</div>
+</section>
+
+<!-- STATS -->
+<section id="stats">
+  <div class="stat"><h3>12+</h3><p>Years of Excellence</p></div>
+  <div class="stat"><h3>48,000+</h3><p>Happy Customers</p></div>
+  <div class="stat"><h3>320 mph</h3><p>Top Speed Record</p></div>
+  <div class="stat"><h3>18</h3><p>Global Showrooms</p></div>
+</section>
+
+<!-- MODELS -->
+<section id="models" class="section">
+  <p class="sec-label">Our Fleet</p>
+  <h2 class="sec-title">Car Models</h2>
+  <p class="sec-sub">Choose from our range of sports cars, electric vehicles, SUVs, and sedans — all built to the highest standard.</p>
+  <div class="models-grid">
+
+    <div class="car-card">
+      <span class="car-icon">🏎️</span>
+      <span class="car-badge badge-sport">Sport</span>
+      <h3>VeloX Raptor GT</h3>
+      <p>A 700 HP twin-turbo sports car built for speed and precision on every road.</p>
+      <div class="car-specs">
+        <div class="spec"><strong>2.9s</strong><span>0–60 mph</span></div>
+        <div class="spec"><strong>700 HP</strong><span>Power</span></div>
+        <div class="spec"><strong>210 mph</strong><span>Top Speed</span></div>
+      </div>
+      <div class="car-price">$89,900</div>
+    </div>
+
+    <div class="car-card">
+      <span class="car-icon">⚡</span>
+      <span class="car-badge badge-ev">Electric</span>
+      <h3>VeloX Volt X1</h3>
+      <p>Zero emissions with a 500-mile range and ultra-fast 20-minute charging capability.</p>
+      <div class="car-specs">
+        <div class="spec"><strong>3.4s</strong><span>0–60 mph</span></div>
+        <div class="spec"><strong>500 mi</strong><span>Range</span></div>
+        <div class="spec"><strong>175 mph</strong><span>Top Speed</span></div>
+      </div>
+      <div class="car-price">$74,500</div>
+    </div>
+
+    <div class="car-card">
+      <span class="car-icon">🚙</span>
+      <span class="car-badge badge-suv">SUV</span>
+      <h3>VeloX Titan Pro</h3>
+      <p>A powerful 7-seater SUV offering spacious comfort and commanding road presence.</p>
+      <div class="car-specs">
+        <div class="spec"><strong>4.8s</strong><span>0–60 mph</span></div>
+        <div class="spec"><strong>450 HP</strong><span>Power</span></div>
+        <div class="spec"><strong>7 Seats</strong><span>Capacity</span></div>
+      </div>
+      <div class="car-price">$65,200</div>
+    </div>
+
+    <div class="car-card">
+      <span class="car-icon">🚗</span>
+      <span class="car-badge badge-sedan">Sedan</span>
+      <h3>VeloX Aura S</h3>
+      <p>A premium sedan combining elegant design with advanced driver-assist technology.</p>
+      <div class="car-specs">
+        <div class="spec"><strong>5.2s</strong><span>0–60 mph</span></div>
+        <div class="spec"><strong>320 HP</strong><span>Power</span></div>
+        <div class="spec"><strong>155 mph</strong><span>Top Speed</span></div>
+      </div>
+      <div class="car-price">$48,800</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features" class="section">
+  <p class="sec-label">Why Choose Us</p>
+  <h2 class="sec-title">Built for Excellence</h2>
+  <p class="sec-sub">Every VeloX vehicle is packed with the latest safety, comfort, and technology features.</p>
+  <div class="features-grid">
+    <div class="feat-card"><div class="feat-icon">🤖</div><h4>AI Driver Assist</h4><p>Smart autopilot with real-time hazard detection and adaptive cruise control.</p></div>
+    <div class="feat-card"><div class="feat-icon">🔋</div><h4>Fast Charging</h4><p>Our EV lineup supports 350kW ultra-rapid charging — 10% to 80% in 18 minutes.</p></div>
+    <div class="feat-card"><div class="feat-icon">🛡️</div><h4>5-Star Safety</h4><p>Euro NCAP 5-star rated with 360° collision detection across our entire lineup.</p></div>
+    <div class="feat-card"><div class="feat-icon">🎵</div><h4>Premium Audio</h4><p>23-speaker Dolby Atmos surround system for an immersive in-car experience.</p></div>
+    <div class="feat-card"><div class="feat-icon">📱</div><h4>Smart Connectivity</h4><p>Apple CarPlay, Android Auto, and proprietary VeloX OS with over-the-air updates.</p></div>
+    <div class="feat-card"><div class="feat-icon">🌍</div><h4>Eco Friendly</h4><p>All production runs on 100% renewable energy. Carbon-neutral by 2027.</p></div>
+  </div>
+</section>
+
+<!-- TEST DRIVE -->
+<section id="testdrive" class="section">
+  <p class="sec-label">Test Drive</p>
+  <h2 class="sec-title">Book a Free Test Drive</h2>
+  <div class="td-wrap">
+    <div class="contact-info">
+      <p class="sec-sub">Visit your nearest VeloX showroom and experience our cars first-hand. No obligations required.</p>
+      <p>
+        📍 18 Showrooms Worldwide<br/>
+        📞 +1 (800) VELOX-GO<br/>
+        📧 hello@veloxmotors.com<br/>
+        🕐 Mon – Sat: 9:00 AM – 7:00 PM
+      </p>
+    </div>
+    <form class="td-form" onsubmit="handleBooking(event)">
+      <input type="text" id="td-name" placeholder="Full Name" required />
+      <input type="email" id="td-email" placeholder="Email Address" required />
+      <input type="tel" id="td-phone" placeholder="Phone Number" />
+      <select id="td-model">
+        <option value="" disabled selected>Select a Model</option>
+        <option>VeloX Raptor GT</option>
+        <option>VeloX Volt X1</option>
+        <option>VeloX Titan Pro</option>
+        <option>VeloX Aura S</option>
+      </select>
+      <input type="date" id="td-date" />
+      <button type="submit" class="btn-red">Confirm Booking</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="footer-logo">VELO<span>X</span> MOTORS</div>
+  <div class="footer-links">
+    <a href="#hero">Home</a>
+    <a href="#models">Models</a>
+    <a href="#features">Features</a>
+    <a href="#testdrive">Test Drive</a>
+    <a href="#">Careers</a>
+    <a href="#">Privacy Policy</a>
+  </div>
+  <p>© 2026 VeloX Motors Inc. All rights reserved.</p>
+</footer>
+
+<script>
+  function handleBooking(e) {
+    e.preventDefault();
+    const name = document.getElementById('td-name').value;
+    const model = document.getElementById('td-model').value || 'a VeloX model';
+    alert('Thank you, ' + name + '!\n\nYour test drive for ' + model + ' has been booked.\nOur team will contact you shortly.');
+    e.target.reset();
+  }
+</script>
+</body>
+</html>
